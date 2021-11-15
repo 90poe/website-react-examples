@@ -24,9 +24,19 @@ const i18nInstance = new Streami18n({
   },
 });
 
-const filters = [
+/*const filters = [
   { type: 'team', demo: 'team' },
   { type: 'messaging', demo: 'team' },
+];*/
+
+// This caused errors with a demo app, it sounds it can't deal with inaccessible
+// channels well, so better to query one channel type when testing
+/*const filters = [
+  { type: 'OnRadar' },
+  { type: 'OnRadarPublic' },
+];*/
+const filters = [
+    { type: 'OnRadar'},
 ];
 const options = { state: true, watch: true, presence: true, limit: 3 };
 const sort = { last_message_at: -1, updated_at: -1 };
